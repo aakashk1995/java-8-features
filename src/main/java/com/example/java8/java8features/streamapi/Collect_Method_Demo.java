@@ -60,6 +60,25 @@ public class Collect_Method_Demo {
 				customers.stream().collect(Collectors.groupingBy(Customer::getId,Collectors.minBy(Comparator.comparing(Customer::getSalary))));
 		System.out.println(minIntegerLongMap);
 
+		customers.stream()
+				.collect(Collectors.groupingBy(Customer::getId,
+						Collectors.minBy(Comparator.comparing(Customer::getSalary))))
+				.entrySet()
+				.stream().map(Map.Entry::getValue)
+				.map((customer -> customer.get().getName()))
+				.collect(Collectors.toList());
+
+		 customers.stream()
+				.collect(Collectors.groupingBy(Customer::getId,
+						Collectors.collectingAndThen(
+								Collectors.minBy(Comparator.comparing(Customer::getSalary)), Optional::get)))
+				 .entrySet().stream().map(Map.Entry::getValue)
+				 .map(Customer::getName)
+				 .collect(Collectors.toList());
+
+
+
+
 
 	}
 

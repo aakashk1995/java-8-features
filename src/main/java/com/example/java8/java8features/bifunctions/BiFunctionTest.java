@@ -9,16 +9,16 @@ import java.util.stream.Stream;
 
 public class BiFunctionTest {
     public static void main(String[] args) {
-        BiFunction<List<String>,List<String>,List<String>> biFunction =
-                (list1,list2)->{
+        BiFunction<List<String>, List<String>, List<String>> biFunction =
+                (list1, list2) -> {
                     System.out.println(list1);
                     System.out.println(list2);
-                List<String> finalList = new ArrayList<>();
+                    List<String> finalList = new ArrayList<>();
                     finalList.addAll(list1);
                     finalList.addAll(list2);
                     return finalList;
                 };
-    List<String> result=  biFunction.apply(Arrays.asList("aakash"),Arrays.asList("khatavkar"));
+        List<String> result = biFunction.apply(Arrays.asList("aakash"), Arrays.asList("khatavkar"));
         System.out.println(result);
     }
 }

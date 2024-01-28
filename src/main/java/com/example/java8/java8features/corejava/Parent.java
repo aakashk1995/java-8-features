@@ -33,4 +33,8 @@ public class Parent {
     public static void commonStaticMethod(){
         System.out.println("common static method");
     }
+
+    public void parentMethod(){
+        System.out.println("I'm inside parent method");
+    }
 }

@@ -1,5 +1,5 @@
 package com.example.java8.java8features.corejava;
-
+@FunctionalInterface
 public interface InterfaceDemo {
    static final int a =10;
     void testA();

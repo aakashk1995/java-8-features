@@ -24,10 +24,12 @@ public class FutureTestException {
         System.out.println("Printing after future");
         try {
             List<Integer> list3 = future3.get(); //5
+            System.out.println(list3);
         } catch (Exception e) {
             System.out.println(e);
         }
         System.out.println("Printing after handling error in future");
+        System.exit(0);
     }
 
 

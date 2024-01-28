@@ -1,6 +1,8 @@
 package com.example.java8.java8features.programs;
 
 import java.util.Arrays;
+import java.util.function.BiFunction;
+import java.util.function.Predicate;
 
 public class reduceExample {
     public static void main(String[] args) {
@@ -15,10 +17,13 @@ public class reduceExample {
 
         System.out.println(reduce2);
 
+        Predicate<String> stringPredicate = (str) -> str.equals("");
         String[] arrays = {"java","is", "love" , "Important"};
         String word = Arrays.stream(arrays).reduce((word1,word2)-> word1.length()>word2.length()?word1:word2).get();
 
         System.out.println(word);
+
+
 
     }
 }
